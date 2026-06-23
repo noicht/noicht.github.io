@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+  <h1>Backend Software Engineer</h1>
+  <p class="hero-subtitle">
+    I build reliable backend systems with Java, Python, Node.js, Docker and database-backed services.
+    This site is my portfolio, project log and technical notebook.
+  </p>
+
+  <div class="hero-links">
+    <a href="{{ config.extra.github }}" target="_blank">GitHub</a>
+    <a href="{{ config.extra.linkedin }}" target="_blank">LinkedIn</a>
+    <a href="{{ config.extra.cv }}">CV</a>
+    <a href="/projects/">Projects</a>
+  </div>
+</section>
+
+<section class="home-grid">
+  <div class="home-card">
+    <h2>About</h2>
+    <p>
+      Backend-oriented engineer focused on APIs, architecture, maintainability and systems that are meant to survive real use.
+    </p>
+    <a href="/about/">Read more →</a>
+  </div>
+
+  <div class="home-card">
+    <h2>Currently</h2>
+    <ul>
+      <li>Building <strong>Sentinel</strong> in Java as a serious systems project</li>
+      <li>Improving portfolio-quality backend case studies</li>
+      <li>Going deeper on architecture, testing and operational tooling</li>
+    </ul>
+  </div>
+</section>
+
+<section class="home-block">
+  <h2>Featured Projects</h2>
+  <div class="project-cards">
+    <article class="project-card">
+      <h3><a href="/projects/sentinel/">Sentinel</a></h3>
+      <p>Java-based systems project focused on architecture, observability, maintainability and CLI-first workflows.</p>
+    </article>
+
+    <article class="project-card">
+      <h3><a href="/projects/lanacion-challenge/">La Nación Challenge</a></h3>
+      <p>Contacts API built with Node.js, Express, TypeScript and MongoDB, including testing and controller design.</p>
+    </article>
+
+    <article class="project-card">
+      <h3><a href="/projects/event-platform/">Event Platform Work</a></h3>
+      <p>Backend and operational work related to event systems, migrations, deployment automation and internal tooling.</p>
+    </article>
+  </div>
+</section>
+
+<section class="home-block">
+  <h2>Writing</h2>
+  {% set blog = get_section(path="blog/_index.md") %}
+  <ul class="post-list">
+    {% for page in blog.pages | slice(end=5) %}
+      <li>
+        <a href="{{ page.permalink }}">{{ page.title }}</a>
+        {% if page.description %} — {{ page.description }}{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock content %}

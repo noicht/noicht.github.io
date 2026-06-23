@@ -1,0 +1,19 @@
+base_url = "https://noicht.github.io"
+title = "Martín Cabrera"
+description = "Backend Software Engineer — Java, Python, Node.js, Docker"
+compile_sass = true
+build_search_index = true
+generate_feeds = true
+minify_html = true
+
+[markdown]
+smart_punctuation = true
+
+[extra]
+author = "Martín Cabrera"
+subtitle = ""
+tagline = "I build reliable backend systems with Java, Python, Node.js and Docker."
+github = "https://github.com/noicht"
+linkedin = "https://www.linkedin.com/mcabreracaz"
+email = "mcabreracaz@gmail.com"
+cv = "/cv.pdf"
